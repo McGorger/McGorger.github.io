@@ -84,7 +84,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/McGorger" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -127,7 +127,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/McGorger" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -162,26 +162,49 @@
           </div>
           <div id="js-content" class="content-ll">
             <article id="post-JS中的闭包问题，闭包的那是些事" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="article-title" itemprop="name">
       JS中的闭包问题，闭包的那是些事
     </h1>
   
 
-        
-        <a href="/2020/06/10/JS%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%8C%E9%97%AD%E5%8C%85%E7%9A%84%E9%82%A3%E6%98%AF%E4%BA%9B%E4%BA%8B/" class="archive-article-date">
+                    
+                        <a href="/2020/06/10/JS%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%8C%E9%97%AD%E5%8C%85%E7%9A%84%E9%82%A3%E6%98%AF%E4%BA%9B%E4%BA%8B/" class="archive-article-date">
   	<time datetime="2020-06-10T10:42:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-10</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>JS的闭包我们可以谈些什么？<br>我刚学js闭包的时候觉得很难去理解，只是知道函数内部的使用了函数外部的变量，但是我后来渐渐深入的了解js…</p>
+                            <!-- 需要添加的位置 -->
+                            <!-- 开始添加字数统计-->
+                            
+                                <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+    <span class="post-count">856字</span>
+    </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+    <span class="post-count">3分</span>
+    </span>
+    </span>
+</div>
+                                    
+                                        <!-- 添加完成 -->
+                                        
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+                                        <p>JS的闭包我们可以谈些什么？<br>我刚学js闭包的时候觉得很难去理解，只是知道函数内部的使用了函数外部的变量，但是我后来渐渐深入的了解js…</p>
 <a id="more"></a>
 <p>####一 、闭包与执行上下文<br> &ensp;&ensp;&ensp;首先在深入了解js闭包之前，我们必须要知道函数的作用域，以及执行上下文,执行上下文通俗的讲就是函数在被创建的时候产生的执行环境的概念，js中的任何代码都是在执行上下文运行的。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">aa</span></span>() &#123;</span><br><span class="line">         var a = 123;</span><br><span class="line">     <span class="keyword">function</span> <span class="function"><span class="title">bb</span></span>() &#123;</span><br><span class="line">             a++;</span><br><span class="line">             console.log(a);</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="built_in">return</span> bb;</span><br><span class="line">     &#125;</span><br><span class="line">     var glob = aa(); // glob是aa内容<span class="built_in">return</span>的函数体，外部函数已经运行完毕，但是变量仍被内部函数引用，故不会被释放</span><br><span class="line">     var demo = glob();</span><br><span class="line">     demo() // 输出a =124</span><br></pre></td></tr></table></figure>
@@ -193,34 +216,34 @@
 <h5 id="再说闭包最后的一个用途"><a href="#再说闭包最后的一个用途" class="headerlink" title="再说闭包最后的一个用途"></a>再说闭包最后的一个用途</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var person = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">          //变量作用域为函数内部，外部无法访问    </span><br><span class="line">          var name = <span class="string">"zhu"</span>;</span><br><span class="line">          <span class="built_in">return</span> &#123;</span><br><span class="line">              getName: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">                  <span class="built_in">return</span> name;</span><br><span class="line">              &#125;,</span><br><span class="line">              setName: <span class="keyword">function</span>(newName) &#123;</span><br><span class="line">                  name = newName;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;();</span><br><span class="line"></span><br><span class="line">      alert(person.name); //直接访问，结果为undefined    </span><br><span class="line">      alert(person.getName()); //结果为zhu    </span><br><span class="line">      person.setName(<span class="string">"abruzzi"</span>);</span><br><span class="line">      alert(person.getName()); //结果为abruzzi</span><br></pre></td></tr></table></figure>
 <p>&ensp;&ensp;&ensp;如上述代码，我们可以利用闭包进行<em>函数封装</em>，我们通过return方式来形成作用域链，在我们调用person方法时候才能访问，而直接访问是不能访问的，因为var定义的局部变量，所以我们取不到name的值而我们定义的函数getName里面return name;这个方法把name返回，在person方法里面也是一个return，所以我们可以通过getName的方法来访问person里面的name值。</p>
 
-      
+                                            
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
+                                                
+                                                    <div class="page-reward">
+                                                        <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                                            <div class="tooltip tooltip-east">
+                                                                <span class="tooltip-item">
               赏
             </span>
-            <span class="tooltip-content">
+                                                                <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
+                                                                
+                                                    </div>
+                                                    </span>
+                                                    </span>
+                                                    </span>
+                </div>
+                </a>
     </div>
-    <div class="article-info article-info-index">
-      
-      
+    
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -232,12 +255,12 @@
 		</ul>
 	</div>
 
-      
+                        
 
-      
+                            
 
-      
-        
+                                    
+                                        
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -287,13 +310,13 @@
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                                            
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-  
+    
 <nav id="article-nav">
   
   
@@ -304,8 +327,8 @@
   
 </nav>
 
-
-<aside class="wrap-side-operation">
+        
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -322,18 +345,17 @@
 </aside>
 
 
+                
+                    
 
-  
-  
-  
+                                
 
-  
+                                            
 
-  
+                                                        
 
-  
-
-
+                                                                
+                                                                            
           </div>
         </div>
       </div>
