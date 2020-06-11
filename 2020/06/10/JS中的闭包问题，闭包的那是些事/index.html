@@ -16,7 +16,7 @@
 <meta property="og:description" content="JS的闭包我们可以谈些什么？我刚学js闭包的时候觉得很难去理解，只是知道函数内部的使用了函数外部的变量，但是我后来渐渐深入的了解js…">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-10T10:42:53.000Z">
-<meta property="article:modified_time" content="2020-06-11T09:41:22.462Z">
+<meta property="article:modified_time" content="2020-06-11T11:21:18.367Z">
 <meta property="article:author" content="朱恩光Blog">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -206,7 +206,7 @@
                     
                                         <p>JS的闭包我们可以谈些什么？<br>我刚学js闭包的时候觉得很难去理解，只是知道函数内部的使用了函数外部的变量，但是我后来渐渐深入的了解js…</p>
 <a id="more"></a>
-<p>####一 、闭包与执行上下文<br> &ensp;&ensp;&ensp;首先在深入了解js闭包之前，我们必须要知道函数的作用域，以及执行上下文,执行上下文通俗的讲就是函数在被创建的时候产生的执行环境的概念，js中的任何代码都是在执行上下文运行的。</p>
+<h4 id="一-、闭包与执行上下文"><a href="#一-、闭包与执行上下文" class="headerlink" title="一 、闭包与执行上下文"></a>一 、闭包与执行上下文</h4><p> &ensp;&ensp;&ensp;首先在深入了解js闭包之前，我们必须要知道函数的作用域，以及执行上下文,执行上下文通俗的讲就是函数在被创建的时候产生的执行环境的概念，js中的任何代码都是在执行上下文运行的。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">aa</span></span>() &#123;</span><br><span class="line">         var a = 123;</span><br><span class="line">     <span class="keyword">function</span> <span class="function"><span class="title">bb</span></span>() &#123;</span><br><span class="line">             a++;</span><br><span class="line">             console.log(a);</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="built_in">return</span> bb;</span><br><span class="line">     &#125;</span><br><span class="line">     var glob = aa(); // glob是aa内容<span class="built_in">return</span>的函数体，外部函数已经运行完毕，但是变量仍被内部函数引用，故不会被释放</span><br><span class="line">     var demo = glob();</span><br><span class="line">     demo() // 输出a =124</span><br></pre></td></tr></table></figure>
 <p> &ensp;&ensp;&ensp;aa在被创建的时候产生的自己的执行上下文，当aa被调用的时候，产生AO,并且当执行完毕时会立刻销毁，由于内部函数在被创建时就有aa提供的AO，仍然使用了a变量所以bb会拿着aa的AO，当bb函数执行时输出为124。</p>
 <h4 id="二、闭包的好处"><a href="#二、闭包的好处" class="headerlink" title="二、闭包的好处"></a>二、闭包的好处</h4><h6 id="1-变量可以长期驻扎在内存之中"><a href="#1-变量可以长期驻扎在内存之中" class="headerlink" title="1.变量可以长期驻扎在内存之中"></a>1.变量可以长期驻扎在内存之中</h6><h6 id="2-避免全局变量的污染，有私有成员"><a href="#2-避免全局变量的污染，有私有成员" class="headerlink" title="2.避免全局变量的污染，有私有成员"></a>2.避免全局变量的污染，有私有成员</h6> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">demo() // 继续执行时，输出a =125</span><br><span class="line">demo() //  输出a =126</span><br></pre></td></tr></table></figure>
