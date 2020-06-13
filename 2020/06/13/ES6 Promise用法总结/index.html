@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>ES6 Promise用法总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Promise的出现是为了解决函数回调地狱的问题，但并没有消除回调，只是让回调变得可控">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6 Promise用法总结">
+<meta property="og:url" content="http://yoursite.com/2020/06/13/ES6%20Promise%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Promise的出现是为了解决函数回调地狱的问题，但并没有消除回调，只是让回调变得可控">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/06/13/ES6%20Promise%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/img/%E5%9B%BE%E4%BE%8B.png">
+<meta property="article:published_time" content="2020-06-13T10:06:22.000Z">
+<meta property="article:modified_time" content="2020-06-13T13:54:44.209Z">
 <meta property="article:author" content="朱恩光Blog">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/13/ES6%20Promise%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/img/%E5%9B%BE%E4%BE%8B.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -156,208 +163,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Vue的生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-ES6 Promise用法总结" class="article article-type-post " itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/14/Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Vue的生命周期</a>
-    </h1>
-  
-
-                    
-                        <a href="/2020/06/14/Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="archive-article-date">
-  	<time datetime="2020-06-14T02:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-14</time>
-</a>
-                            <!-- 需要添加的位置 -->
-                            <!-- 开始添加字数统计-->
-                            
-                                <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-    <span class="post-count">0字</span>
-    </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-    <span class="post-count">1分</span>
-    </span>
-    </span>
-</div>
-                                    
-                                        <!-- 添加完成 -->
-                                        
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                                        
-                                            
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/2020/06/14/Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-  
-    <article id="post-剖析Vue的响应式原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/14/%E5%89%96%E6%9E%90Vue%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/">剖析Vue的响应式原理</a>
-    </h1>
-  
-
-                    
-                        <a href="/2020/06/14/%E5%89%96%E6%9E%90Vue%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-06-14T02:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-14</time>
-</a>
-                            <!-- 需要添加的位置 -->
-                            <!-- 开始添加字数统计-->
-                            
-                                <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-    <span class="post-count">0字</span>
-    </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-    <span class="post-count">1分</span>
-    </span>
-    </span>
-</div>
-                                    
-                                        <!-- 添加完成 -->
-                                        
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                                        
-                                            
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/2020/06/14/%E5%89%96%E6%9E%90Vue%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-  
-    <article id="post-ES6 Promise用法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/13/ES6%20Promise%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/">ES6 Promise用法总结</a>
+    <h1 class="article-title" itemprop="name">
+      ES6 Promise用法总结
     </h1>
   
 
@@ -393,237 +206,151 @@
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                        <p><strong>Promise的出现是为了解决函数回调地狱的问题，但并没有消除回调，只是让回调变得可控</strong><br> <img src="img/%E5%9B%BE%E4%BE%8B.png" alt="promise"><br>
-                            
-                                <a class="article-more-a" href="/2020/06/13/ES6%20Promise%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/#more">
-                                    more >></a>
-                                
-                                    
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/2020/06/13/ES6%20Promise%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-  
-    <article id="post-JS中的闭包问题，闭包的那是些事" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/10/JS%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%8C%E9%97%AD%E5%8C%85%E7%9A%84%E9%82%A3%E6%98%AF%E4%BA%9B%E4%BA%8B/">JS中的闭包问题，闭包的那是些事</a>
-    </h1>
-  
-
-                    
-                        <a href="/2020/06/10/JS%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%8C%E9%97%AD%E5%8C%85%E7%9A%84%E9%82%A3%E6%98%AF%E4%BA%9B%E4%BA%8B/" class="archive-article-date">
-  	<time datetime="2020-06-10T10:42:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-10</time>
-</a>
-                            <!-- 需要添加的位置 -->
-                            <!-- 开始添加字数统计-->
-                            
-                                <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-    <span class="post-count">856字</span>
-    </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-    <span class="post-count">3分</span>
-    </span>
-    </span>
-</div>
-                                    
-                                        <!-- 添加完成 -->
-                                        
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                        <p>JS的闭包我们可以谈些什么？<br>我刚学js闭包的时候觉得很难去理解，只是知道函数内部的使用了函数外部的变量，但是我后来渐渐深入的了解js…</p>
-                            
-                                <a class="article-more-a" href="/2020/06/10/JS%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%8C%E9%97%AD%E5%8C%85%E7%9A%84%E9%82%A3%E6%98%AF%E4%BA%9B%E4%BA%8B/#more">
-                                    more >></a>
-                                
-                                    
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/2020/06/10/JS%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%8C%E9%97%AD%E5%8C%85%E7%9A%84%E9%82%A3%E6%98%AF%E4%BA%9B%E4%BA%8B/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/08/hello-world/">我的第一章博客</a>
-    </h1>
-  
-
-                    
-                        <a href="/2020/06/08/hello-world/" class="archive-article-date">
-  	<time datetime="2020-06-08T10:34:58.525Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-                            <!-- 需要添加的位置 -->
-                            <!-- 开始添加字数统计-->
-                            
-                                <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-    <span class="post-count">63字</span>
-    </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-    <span class="post-count">1分</span>
-    </span>
-    </span>
-</div>
-                                    
-                                        <!-- 添加完成 -->
-                                        
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                                        <h3 id="希望每天都会充实，提升技术为目标！！！"><a href="#希望每天都会充实，提升技术为目标！！！" class="headerlink" title="希望每天都会充实，提升技术为目标！！！"></a>希望每天都会充实，提升技术为目标！！！</h3><h3 id="将写博客一直坚持下去"><a href="#将写博客一直坚持下去" class="headerlink" title="将写博客一直坚持下去"></a>将写博客一直坚持下去</h3><p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1592066491200&di=c04487267fe0b220c61ba2d1a2542ea5&imgtype=0&src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F71%2F49117%2F87d3e442b5921791_1366x768.jpg" alt="es6"></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>功到自然成，成功之前难免有失败，然而只要能克服困难，坚持不懈地努力，那么，成功就在眼前。</p>
-</blockquote>
-</blockquote>
-</blockquote>
+                                        <p><strong>Promise的出现是为了解决函数回调地狱的问题，但并没有消除回调，只是让回调变得可控</strong><br> <img src="img/%E5%9B%BE%E4%BE%8B.png" alt="promise"><br> <a id="more"></a><br> 上图是关于promise执行的流程图，promise有3种状态:</p>
+<ul>
+<li>pending（未决阶段）</li>
+</ul>
+<ul>
+<li>resolved （已决阶段）</li>
+<li>rejected  （已决阶段）<br>其中在未决(pending)阶段需要做一些例如：发送ajax请求等都是在这个阶段进行的， ==注意：在pending阶段的代码是同步执行的，当promise被创建时，其里面的回调函数立即被执行==<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">const</span> pro = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// 未决阶段的处理</span></span><br><span class="line">            <span class="comment">// 通过调用resolve函数将Promise推向已决阶段的resolved状态</span></span><br><span class="line">            <span class="comment">// 通过调用reject函数将Promise推向已决阶段的rejected状态</span></span><br><span class="line">            <span class="comment">// resolve和reject均可以传递最多一个参数，表示推向状态的数据</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">            setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">                resolve(<span class="number">123</span>) <span class="comment">//将状态推向已决 resolved状态</span></span><br><span class="line">            &#125;, <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="number">3</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="comment">// 依次输出 1 3 2</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+resolved就是将”未决状态”变为”成功”即从”pending”到”resolved”。rejected就是将”未决状态”变为”失败”即从”pending”到”rejected”，它们都可以将函数的处理结构作为参数返回出去。  <h5 id="then"><a href="#then" class="headerlink" title=".then()"></a>.then()</h5>哈哈，这是我总结的第一个方法。Promise.then()是当promise的状态从未决阶段到已决阶段后，要执行的后续操作，promise状态一经改变，不会再变。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pro.then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">   <span class="comment">//这是一个thenable函数，当如果当前是resolve状态时，就会触发这个函数</span></span><br><span class="line">   <span class="comment">//如果当前是未决阶段则会加入作业队列， 等待resolved状态后执行</span></span><br><span class="line">   <span class="comment">//data为pending状态时传递过来的状态数据</span></span><br><span class="line">&#125;.error=&gt;&#123;</span><br><span class="line"> <span class="comment">//这是一个catchable函数，当如果当前是reject状态时，就会触发这个函数</span></span><br><span class="line"> <span class="comment">//如果当前是未决阶段则会加入作业队列， 等待rejected状态后执行</span></span><br><span class="line">   <span class="comment">//data为pending状态时传递过来的状态数据</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+==注意：.then()方法返回的仍然是一个全新的promise对象，其返回值与状态是由当前Promise决定的==</li>
+</ul>
+<ol>
+<li><p>如何当前的promise是未决的，得到的新的promise是挂起状态</p>
+</li>
+<li><p>如何当前的promise是已决的，会运行响应的后续处理函数，并将后续处理函数的结果（返回值）作为resolve的状态数据，应用到新的Promise中;如何后续处理函数出现错误则会把rejected状态数据应用到新的promise中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pro = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">           resolve(<span class="number">111</span>)</span><br><span class="line">       &#125;)</span><br><span class="line"></span><br><span class="line">       <span class="keyword">const</span> pro2 = pro.then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">if</span> (data &gt; <span class="number">20</span>) &#123;</span><br><span class="line">               <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'1111'</span>)</span><br><span class="line"></span><br><span class="line">           &#125; <span class="keyword">else</span> <span class="keyword">if</span> (data &gt; <span class="number">10</span>) &#123;</span><br><span class="line">               <span class="keyword">throw</span> <span class="keyword">new</span> error(<span class="string">'1111'</span>)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;, err =&gt; &#123;</span><br><span class="line"></span><br><span class="line">       &#125;)</span><br><span class="line">       setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">           <span class="built_in">console</span>.log(pro2) <span class="comment">// pro2为rejected状态，因为后续处理函数抛出了错误</span></span><br><span class="line">       &#125;, <span class="number">1000</span>)</span><br><span class="line">       <span class="built_in">console</span>.log(pro2)   <span class="comment">// pro2为pending状态,因为此时的pro是pending的</span></span><br></pre></td></tr></table></figure>
+<h4 id="all-iterable"><a href="#all-iterable" class="headerlink" title=".all(iterable)"></a>.all(iterable)</h4><p>这个方法返回的是一个新的promise对象，该promise对象在iterable参数对象里都成果才会触发成功。一旦任何一个iterable里的promise对象失败则会立即触发该promise对象的失败。这个新的promise函数触发成功之后会将，一个包含iterable里面的所有promise对象的数组作为成功回调的返回值，顺序跟iterable保持一致；如果这个新的promise对象触发了失败状态，它会把iterable里第一个触发promise对象的错误信息作为它失败的错误信息。Promise.all 方法常被用于处理多个promise对象的集合</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandom</span>(<span class="params">min, max</span>) </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="built_in">Math</span>.random() * (max - min) + min</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">const</span> proms = []</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">         proms.push(<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">             setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                 consoloe.log(i, <span class="string">"完成"</span>)</span><br><span class="line">                 resolve(i)</span><br><span class="line">             &#125;,getRandom(<span class="number">1000</span>, <span class="number">3000</span>))</span><br><span class="line">         &#125;))</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// 等到所有的promise变成resolved状态后输出全部完成</span></span><br><span class="line">     <span class="keyword">const</span> pro = <span class="built_in">Promise</span>.all(proms)</span><br><span class="line">     pro.then(<span class="function"><span class="params">datas</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="built_in">console</span>.log(<span class="string">"全部完成"</span>,datas) <span class="comment">//[1,2,3,4,5,6,7,8,9,10] 返回每一个promise成功之后的状态数据</span></span><br></pre></td></tr></table></figure>
+<h4 id="race-iterable"><a href="#race-iterable" class="headerlink" title=".race(iterable)"></a>.race(iterable)</h4><p>当iterable参数里的任何一个子promise被成功或失败后，父promise会立即使用子promise的成功值或者失败值，作为父promise的状态数据，返回该promise</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandom</span>(<span class="params">min, max</span>) </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="built_in">Math</span>.random() * (max - min) + min</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">const</span> proms = []</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">         proms.push(<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">             setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                 <span class="keyword">if</span> (<span class="built_in">Math</span>.random() &gt; <span class="number">0.5</span>) &#123;</span><br><span class="line">                     resolve(i + <span class="string">'率先成功'</span>)</span><br><span class="line">                 &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                     reject(i + <span class="string">'率先失败'</span>)</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;, getRandom(<span class="number">1000</span>, <span class="number">2000</span>))</span><br><span class="line">         &#125;))</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// 只要proms 中有一个promise先推向成功或者失败就将状态数据值传递给datas</span></span><br><span class="line">     <span class="keyword">const</span> pro = <span class="built_in">Promise</span>.race(proms)</span><br><span class="line">     pro.then(<span class="function"><span class="params">datas</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="built_in">console</span>.log(datas) <span class="comment">// 输出一个状态数据</span></span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="其他的api"><a href="#其他的api" class="headerlink" title="其他的api"></a>其他的api</h4><p>finally : [es2018]注册一个后续处理函数（无参），当promise已决时运行该函数<br>resolved : 该方法返回一个resolved状态的promise，传递的数据作为状态数据</p>
+<pre><code>特殊情况：如果传递的数据是promise，则直接返回Promsie对象 </code></pre><p>rejected : 该方法返回一个rejected 状态的promise，传递的数据作为状态数据   </p>
+</li>
+</ol>
 
                                             
 
                                                 
+                                                    <div class="page-reward">
+                                                        <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                                            <div class="tooltip tooltip-east">
+                                                                <span class="tooltip-item">
+              赏
+            </span>
+                                                                <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                                                                
+                                                    </div>
+                                                    </span>
+                                                    </span>
+                                                    </span>
+                </div>
+                </a>
+    </div>
+    
         </div>
         <div class="article-info article-info-index">
             
                     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
                         
 
                             
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/2020/06/08/hello-world/">
-                                        展开全文 >></a>
-                                </p>
-                                
 
                                     
+                                        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/13/ES6%20Promise%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                                            
                                                 <div class="clearfix"></div>
         </div>
         </div>
 </article>
 
+    
+<nav id="article-nav">
+  
+    <a href="/2020/06/14/%E5%89%96%E6%9E%90Vue%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          剖析Vue的响应式原理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/10/JS%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%8C%E9%97%AD%E5%8C%85%E7%9A%84%E9%82%A3%E6%98%AF%E4%BA%9B%E4%BA%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS中的闭包问题，闭包的那是些事</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+        
             <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
@@ -642,10 +369,16 @@
 
 
                 
-  
-  
+                    
 
+                                
 
+                                            
+
+                                                        
+
+                                                                
+                                                                            
           </div>
         </div>
       </div>
@@ -665,8 +398,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
