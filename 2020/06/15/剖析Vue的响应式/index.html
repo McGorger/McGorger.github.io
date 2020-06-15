@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>剖析Vue的响应式 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vue的响应式 Vue的响应式是Vue的核心原理，就当数据改变了页面会重新染。12&lt;div id&#x3D;&quot;app&quot;&gt;&amp;#123;&amp;#123; MrLiu.name &amp;#125;&amp;#125;&lt;&#x2F;div&gt;&lt;!-- 页面显示：小刘 --&gt; 12345678910111213const vm &#x3D; new Vue(&amp;#123;    el:&#39;#app&#39;,    data :&amp;#">
+  <meta name="description" content="Vue的响应式 Vue的响应式是Vue的核心原理，就当数据改变了页面会重新渲染。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剖析Vue的响应式">
 <meta property="og:url" content="http://yoursite.com/2020/06/15/%E5%89%96%E6%9E%90Vue%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Vue的响应式 Vue的响应式是Vue的核心原理，就当数据改变了页面会重新染。12&lt;div id&#x3D;&quot;app&quot;&gt;&amp;#123;&amp;#123; MrLiu.name &amp;#125;&amp;#125;&lt;&#x2F;div&gt;&lt;!-- 页面显示：小刘 --&gt; 12345678910111213const vm &#x3D; new Vue(&amp;#123;    el:&#39;#app&#39;,    data :&amp;#">
+<meta property="og:description" content="Vue的响应式 Vue的响应式是Vue的核心原理，就当数据改变了页面会重新渲染。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-15T10:32:18.000Z">
-<meta property="article:modified_time" content="2020-06-15T13:54:23.226Z">
+<meta property="article:modified_time" content="2020-06-15T14:15:27.340Z">
 <meta property="article:author" content="朱恩光Blog">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -184,7 +184,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-    <span class="post-count">903字</span>
+    <span class="post-count">904字</span>
     </span>
     </span>
 
@@ -205,10 +205,14 @@
                 <div class="article-entry" itemprop="articleBody">
                     
                                         <h2 id="Vue的响应式"><a href="#Vue的响应式" class="headerlink" title="Vue的响应式"></a>Vue的响应式</h2><ul>
-<li>Vue的响应式是Vue的核心原理，就当数据改变了页面会重新染。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>&#123;&#123; MrLiu.name &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 页面显示：小刘 --&gt;</span></span><br></pre></td></tr></table></figure>
+<li><p>Vue的响应式是Vue的核心原理，就当数据改变了页面会重新渲染。</p>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>&#123;&#123; MrLiu.name &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 页面显示：小刘 --&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    data :&#123;</span><br><span class="line">        msg:<span class="string">'一心一意'</span></span><br><span class="line">        MrLiu:&#123;</span><br><span class="line">            name:<span class="string">'小刘'</span>,</span><br><span class="line">            age:<span class="number">20</span>,</span><br><span class="line">            height:<span class="string">'170cm'</span></span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//更改Vue的数据</span></span><br><span class="line">vm.MrLiu.name = <span class="string">'小王'</span> <span class="comment">//此时页面显示小王</span></span><br></pre></td></tr></table></figure>
-当我们对MrLiu的name值修改时会页面会重新渲染，这就是Vue的响应式。<a id="more"></a></li>
-<li>那么问题来了，Vue是如何知道数据变了,监控数据的变化,从而去渲染页面<blockquote>
+<p>当我们对MrLiu的name值修改时会页面会重新渲染，这就是Vue的响应式。</p>
+</li>
+<li><p>那么问题来了，Vue是如何知道数据变了,监控数据的变化,从而去渲染页面</p>
+<blockquote>
 <p>在Vue2.0利用Object.defineProperty对数据进行劫持</p>
 </blockquote>
 </li>

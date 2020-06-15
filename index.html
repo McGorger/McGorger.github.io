@@ -277,7 +277,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-    <span class="post-count">903字</span>
+    <span class="post-count">904字</span>
     </span>
     </span>
 
@@ -298,9 +298,7 @@
                 <div class="article-entry" itemprop="articleBody">
                     
                         <h2 id="Vue的响应式"><a href="#Vue的响应式" class="headerlink" title="Vue的响应式"></a>Vue的响应式</h2><ul>
-<li>Vue的响应式是Vue的核心原理，就当数据改变了页面会重新染。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>&#123;&#123; MrLiu.name &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 页面显示：小刘 --&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    data :&#123;</span><br><span class="line">        msg:<span class="string">'一心一意'</span></span><br><span class="line">        MrLiu:&#123;</span><br><span class="line">            name:<span class="string">'小刘'</span>,</span><br><span class="line">            age:<span class="number">20</span>,</span><br><span class="line">            height:<span class="string">'170cm'</span></span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//更改Vue的数据</span></span><br><span class="line">vm.MrLiu.name = <span class="string">'小王'</span> <span class="comment">//此时页面显示小王</span></span><br></pre></td></tr></table></figure>
-当我们对MrLiu的name值修改时会页面会重新渲染，这就是Vue的响应式。
+<li><p>Vue的响应式是Vue的核心原理，就当数据改变了页面会重新渲染。</p>
                             
                                 <a class="article-more-a" href="/2020/06/15/%E5%89%96%E6%9E%90Vue%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F/#more">
                                     more >></a>
