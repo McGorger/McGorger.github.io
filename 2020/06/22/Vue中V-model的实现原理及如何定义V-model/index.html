@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Vue中V-model的实现原理及如何定义V-model | Hexo</title>
+  <title>V-model的实现原理及如何定义V-model | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Vue中V-model的实现原理及如何定义V-model">
-<meta property="og:url" content="http://yoursite.com/2020/06/20/Vue%E4%B8%ADV-model%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89V-model/index.html">
+  <meta name="description" content="关于v-model的实现原理以及在组件如何定义v-model是实现双向数据绑定的，可以看作是 value+input的语法糖。那么问题来了 checkbox， select 这些元素也有v-model指令那它又是如何实现的呢?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="V-model的实现原理及如何定义V-model">
+<meta property="og:url" content="http://yoursite.com/2020/06/22/Vue%E4%B8%ADV-model%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89V-model/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于v-model的实现原理以及在组件如何定义v-model是实现双向数据绑定的，可以看作是 value+input的语法糖。那么问题来了 checkbox， select 这些元素也有v-model指令那它又是如何实现的呢?">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-20T04:12:07.368Z">
-<meta property="article:modified_time" content="2020-06-20T04:12:58.516Z">
+<meta property="article:published_time" content="2020-06-22T10:52:22.000Z">
+<meta property="article:modified_time" content="2020-06-22T11:47:17.064Z">
 <meta property="article:author" content="朱恩光Blog">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -165,13 +168,13 @@
                 
   
     <h1 class="article-title" itemprop="name">
-      Vue中V-model的实现原理及如何定义V-model
+      V-model的实现原理及如何定义V-model
     </h1>
   
 
                     
-                        <a href="/2020/06/20/Vue%E4%B8%ADV-model%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89V-model/" class="archive-article-date">
-  	<time datetime="2020-06-20T04:12:07.368Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
+                        <a href="/2020/06/22/Vue%E4%B8%ADV-model%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89V-model/" class="archive-article-date">
+  	<time datetime="2020-06-22T10:52:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
 </a>
                             <!-- 需要添加的位置 -->
                             <!-- 开始添加字数统计-->
@@ -181,7 +184,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-    <span class="post-count">0字</span>
+    <span class="post-count">254字</span>
     </span>
     </span>
 
@@ -201,7 +204,18 @@
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        
+                                        <h4 id="关于v-model的实现原理以及在组件如何定义"><a href="#关于v-model的实现原理以及在组件如何定义" class="headerlink" title="关于v-model的实现原理以及在组件如何定义"></a>关于v-model的实现原理以及在组件如何定义</h4><p>v-model是实现双向数据绑定的，可以看作是 value+input的语法糖。那么问题来了 checkbox， select 这些元素也有v-model指令那它又是如何实现的呢?</p>
+<a id="more"></a>
+<h5 id="理解"><a href="#理解" class="headerlink" title="理解:"></a>理解:</h5><p>组件的v-model是value+input的语法糖</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-checkbox</span> <span class="attr">:value</span> = <span class="string">""</span> @<span class="attr">input</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">el-checkbox</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">el-checkbox</span> <span class="attr">v-model</span>=<span class="string">"check"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-checkbox</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>全局重新定义组件配置v-model(自定义v-model)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'el-checkbox'</span>,&#123;</span><br><span class="line">    template:<span class="string">`&lt;input type = "checkbox" :checked="check" @change="$emit('change',$event.target.checked)"&gt;`</span>,</span><br><span class="line">    model:&#123;</span><br><span class="line">        prop:<span class="string">'check'</span>,<span class="comment">//更改默认的value名字</span></span><br><span class="line">        event:<span class="string">'change'</span><span class="comment">//更改默认（input）方法名为 change</span></span><br><span class="line">    &#125;,</span><br><span class="line">    props:&#123;</span><br><span class="line">        check:<span class="built_in">Boolean</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="原理总结"><a href="#原理总结" class="headerlink" title="原理总结"></a>原理总结</h5><ul>
+<li>定义组件上的v-model如何不进行配置model默认转化为value+input。</li>
+<li>如果是原生v-model，会根据标签的不同生成不同的属性和事件。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">v-model</span>=<span class="string">"value"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- value的值为Bealoon类型，监听change方法 --&gt;</span></span><br></pre></td></tr></table></figure>
+以上都是根据源码总结的哈</li>
+</ul>
+
                                             
 
                                                 
@@ -230,6 +244,17 @@
         <div class="article-info article-info-index">
             
                     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
                         
 
                             
@@ -280,7 +305,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/20/Vue%E4%B8%ADV-model%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89V-model/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/22/Vue%E4%B8%ADV-model%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89V-model/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +319,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/06/20/Vue%E4%B8%AD%20v-for%E4%BD%BF%E7%94%A8key%E7%9A%84%E4%BD%9C%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Vue中v-for使用key的作用
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/17/Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue的生命周期</div>
+    <a href="/2020/06/20/Vue%E4%B8%AD%20v-for%E4%BD%BF%E7%94%A8key%E7%9A%84%E4%BD%9C%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue中v-for使用key的作用</div>
       <i class="icon-circle-right"></i>
     </a>
   
