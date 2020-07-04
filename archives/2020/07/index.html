@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>组件_处理边界情况 | Hexo</title>
+  <title>Archives: 2020/7 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="组件_处理边界情况组件处理边界情况有一些相关的功能，即对Vue的规则做一些小调整的特殊情况。要注意的是这些功能都是有劣势和危险的场景的。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="组件_处理边界情况">
-<meta property="og:url" content="http://yoursite.com/2020/06/28/%E7%BB%84%E4%BB%B6_%E5%A4%84%E7%90%86%E8%BE%B9%E7%95%8C%E6%83%85%E5%86%B5/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2020/07/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="组件_处理边界情况组件处理边界情况有一些相关的功能，即对Vue的规则做一些小调整的特殊情况。要注意的是这些功能都是有劣势和危险的场景的。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-28T14:55:22.000Z">
-<meta property="article:modified_time" content="2020-06-28T17:04:54.002Z">
 <meta property="article:author" content="朱恩光Blog">
-<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -161,107 +156,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-组件_处理边界情况" class="article article-type-post " itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
+            
   
-    <h1 class="article-title" itemprop="name">
-      组件_处理边界情况
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/07/04/$nextTick%E7%90%86%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2020-07-04T09:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/07/04/$nextTick%E7%90%86%E8%A7%A3/">$nextTick理解</a>
     </h1>
   
 
-                    
-                        <a href="/2020/06/28/%E7%BB%84%E4%BB%B6_%E5%A4%84%E7%90%86%E8%BE%B9%E7%95%8C%E6%83%85%E5%86%B5/" class="archive-article-date">
-  	<time datetime="2020-06-28T14:55:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
-</a>
-                            <!-- 需要添加的位置 -->
-                            <!-- 开始添加字数统计-->
-                            
-                                <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-    <span class="post-count">1.8k字</span>
-    </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-    <span class="post-count">7分</span>
-    </span>
-    </span>
-</div>
-                                    
-                                        <!-- 添加完成 -->
-                                        
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                                        <h4 id="组件-处理边界情况"><a href="#组件-处理边界情况" class="headerlink" title="组件_处理边界情况"></a>组件_处理边界情况</h4><p>组件处理边界情况有一些相关的功能，即对Vue的规则做一些小调整的特殊情况。要注意的是这些功能都是有劣势和危险的场景的。</p>
-<a id="more"></a>
-<h5 id="访问元素-amp-组件"><a href="#访问元素-amp-组件" class="headerlink" title="访问元素&amp;组件"></a>访问元素&amp;组件</h5><p>在绝大多数情况下，我们最好不要触达另一个组件的实例内部或手动操作Dom（Vue都是数据驱动试图的）。不过在一些特殊的情况下做这些也是合适的。</p>
-<h5 id="访问根实例"><a href="#访问根实例" class="headerlink" title="访问根实例"></a>访问根实例</h5><p>在每个子组件，可以通过$rout访问根实例。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">my-cmp</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">cmp-a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">cmp-b</span>&gt;</span><span class="tag">&lt;/<span class="name">cmp-b</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">cmp-a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">my-cmp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>所有的子组件都可以通过$root访问根元素组件（大型项目不要使用）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-cmp'</span>, &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;</span><br><span class="line">            share:<span class="string">'share'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    template: <span class="string">'&lt;div&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/div&gt;'</span></span><br><span class="line">&#125;)</span><br><span class="line">Vue.component(<span class="string">'cmp-a'</span>, &#123;</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.$parent.share); <span class="comment">//打印出父组件 share</span></span><br><span class="line">    &#125;</span><br><span class="line">    template: <span class="string">'&lt;div&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/div&gt;'</span></span><br><span class="line">&#125;)</span><br><span class="line">Vue.component(<span class="string">'cmp-b'</span>, &#123;</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.$parent.$parent.share); <span class="comment">//打印 爷爷组件 share</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.$root.name); <span class="comment">//打印出根实例 name：zhu，尽量不要使用，因为不知道name 的数据在哪个组件会被更改</span></span><br><span class="line">    &#125;</span><br><span class="line">    template: <span class="string">'&lt;div&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/div&gt;'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    data: &#123;</span><br><span class="line">        name:<span class="string">'zhu'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>若my-cmp需要共享一个属性share，它的所有子组件元素都需要访问share属性，在这种情况下cmp-a可以通过this.$parent.share的方式访问share。<br>那么通过这种方式构建出来的组件内部仍然容易出现问题。比如，在cmp-b组件中去访问share时，需要查看一下，其父组件是否存在share，如果不存在，则向上一级查找，落实到代码上为:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var share &#x3D; this.$parent.share || this.$parent.$parent.share;</span><br></pre></td></tr></table></figure>
-<p>如果这样做组件就会失控：触达父级组件会使用更难调解，尤其是当变更父组件数据时，过一段时间，很难找出变更是从哪里发起的。<br>碰到以上情况，可以使用依赖注入。</p>
-<h5 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h5><p>在上面的例子中，利用$parent属性，没有办法很好的扩展到更深层级的嵌套组件上。这也是依赖注入的用武之地，这里用到了新的实例选项：provide和inject。<br>provide选项允许我们指定想要提供给后代组件的数据/方法,例如:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'cmp-parent'</span>,&#123;</span><br><span class="line">    provide ()&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            share:<span class="keyword">this</span>.share</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    data ()&#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;</span><br><span class="line">            share:<span class="string">'share'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    template:<span class="string">`&lt;div&gt;cmp-parent&lt;/div&gt;`</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>然后在任何后代组件中，都可以使用inject选项来接受指定想要添加在实例上的属性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.compontent(<span class="string">'cmp-a'</span>,&#123;</span><br><span class="line">    inject:[<span class="string">'share'</span>],</span><br><span class="line">    mounted ()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.share); <span class="comment">//打印出注入的share</span></span><br><span class="line">    &#125;</span><br><span class="line">    template:<span class="string">`&lt;div&gt;cmp-a&lt;/div&gt;`</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>相比$parent来说，这个用法可以让我们在任意后代组件中访问share，而不是暴露整个cmp-parent实例。这允许我们更好的持续研发该组件，而不需要担心我们可能会改变/移除一些依赖的东西。同时这些组件之间的接口是始终明确定义的，就和prop一样。<br>实际上，可以把依赖注入看作一大部分“大范围的prop”，除了“：</p>
-<ul>
-<li>祖先组件不需要知道哪些后代元素使用他提供的组件</li>
-<li>后代组件不需要知道被注入的属性来自哪里<br>但是，依赖注入也有负面的影响。它将你应用程序中的组件与它们当前的组织耦合起来，使重构更加困难。同时所提供的属性是非响应式的。因为使用它们来创建一个中心化规模化的数据跟使用$root做这些都是不够好的。如果你想要共享的这个属性是你的应用特有的，而不是通用化的，或者如果你想在祖先元素更新所提供的数据，那么这意味着你可能需要换用一个像Vuex这样真正的状态管理方式了。<h5 id="访问子组件实例或子元素"><a href="#访问子组件实例或子元素" class="headerlink" title="访问子组件实例或子元素"></a>访问子组件实例或子元素</h5>尽管存在prop和事件，但是有时候我们仍可以需要在js里直接访问一个子组件，那么此时可以通过ref特性为子组件赋予一个ID引用。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-cmp</span> <span class="attr">ref</span>=<span class="string">"cmp"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cmp</span>&gt;</span></span><br></pre></td></tr></table></figure>
-这样就可以通过this.$refs.cmp来访问<code>&lt;my—cmp&gt;</code>实例。<br>ref也可以对指定Dom元素进行访问，如:<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">ref</span>=<span class="string">"input"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-那么可以通过this.$refs.input来访问Dom元素。<br>当ref和v-for一起使用时，得到的引用将会是一个包含了对应数据源的这些子组件的数组。<br>注意: $refs只会在组件渲染完成之后生效，并且不是响应式的。应该避免在模板或计算属性中访问$refs。<h5 id="程序化的事件侦听器"><a href="#程序化的事件侦听器" class="headerlink" title="程序化的事件侦听器"></a>程序化的事件侦听器</h5>除了v-on和$emit外，Vue实例在其事件接口中还提供了其他的方法。</li>
-<li>$on(eventName,eventHandler)侦听一个事件</li>
-<li>$once(eventName,eventHandler)一次性侦听一个事件</li>
-<li>$off(eventName,eventHandler)停止侦听一个事件<br>这些方法一般不会被用到，但是，当需要在一个组件实例上手动侦听事件时，他们可以派得上用场。<br>例如:当使用第三方的库：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-cmp'</span>,&#123;</span><br><span class="line">    <span class="comment">//一次性将这个日期选择器附加到一个输入框上</span></span><br><span class="line">    <span class="comment">//它会挂载到Dom上。</span></span><br><span class="line">     mounted()&#123;</span><br><span class="line">    <span class="keyword">this</span>.picker  = <span class="keyword">new</span> Pikaday(&#123;</span><br><span class="line">        field:<span class="keyword">this</span>.$refs.input;</span><br><span class="line">        format:<span class="string">'YYYY-MM-DD'</span></span><br><span class="line">    &#125;),</span><br><span class="line">    beforeDestory ()&#123;</span><br><span class="line">        <span class="keyword">this</span>.picked.destory();</span><br><span class="line">    &#125;,</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;</span></span><br><span class="line"><span class="string">     &lt;input type="text" ref="input" /&gt;</span></span><br><span class="line"><span class="string">     &lt;button @click="$destory()"&gt;销毁组件</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-使用上面的方法，有两个潜在的问题：</li>
-<li>它需要在这个组件实例上保存这个picker，如果可以的话只有生命周期钩子函数可以访问到它。这并不算严重的问题，但是它可以被视为杂物。</li>
-<li>我们建立的代码独立于我们的清理代码，这使得我比较难于程序化地清理我们建立的所有东西。<br>所以，我们可以通过程序化的侦听器解决这两个问题：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-cmp'</span>,&#123;</span><br><span class="line">   <span class="keyword">var</span> picker  = <span class="keyword">new</span> Pikaday(&#123;</span><br><span class="line">        field:<span class="keyword">this</span>.$refs.input;</span><br><span class="line">        format:<span class="string">'YYYY-MM-DD'</span></span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">this</span>.$once(<span class="string">'hook:beforeDestory'</span>,()=&gt;&#123;</span><br><span class="line">        picker.destory();</span><br><span class="line">    &#125;)</span><br><span class="line">     &#125;</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;</span></span><br><span class="line"><span class="string">     &lt;input type="text" ref="input" /&gt;</span></span><br><span class="line"><span class="string">     &lt;button @click="$destory()"&gt;销毁组件</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-使用了这个策略 ，还可以让多个输入框使用不同的picker；<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-cmp'</span>, &#123;</span><br><span class="line"></span><br><span class="line">          mounted() &#123;</span><br><span class="line">              <span class="keyword">this</span>.dataPicker(<span class="string">'input1'</span>);</span><br><span class="line">              <span class="keyword">this</span>.dataPicker(<span class="string">'input2'</span>);</span><br><span class="line"></span><br><span class="line">          &#125;,</span><br><span class="line">          methods: &#123;</span><br><span class="line">              dataPicker(refName) &#123;</span><br><span class="line">                  <span class="keyword">var</span> picker = <span class="keyword">new</span> Pikaday(&#123;</span><br><span class="line">                          field: <span class="keyword">this</span>.$refs.input;</span><br><span class="line">                          format: <span class="string">'YYYY-MM-DD'</span></span><br><span class="line">                      &#125;),</span><br><span class="line">                      <span class="keyword">this</span>.$once(<span class="string">'hook:beforeDestory'</span>, () =&gt; &#123;</span><br><span class="line">                          picker.destory();</span><br><span class="line">                      &#125;)</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          template: <span class="string">`</span></span><br><span class="line"><span class="string">       &lt;div&gt;</span></span><br><span class="line"><span class="string">         &lt;input type="text" ref="input1" /&gt;</span></span><br><span class="line"><span class="string">         &lt;input type="text" ref="input2" /&gt;</span></span><br><span class="line"><span class="string">        &lt;button @click="$destory()"&gt;销毁组件</span></span><br><span class="line"><span class="string">     &lt;/div&gt;</span></span><br><span class="line"><span class="string">   `</span></span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
-注意:即便如此，如果你发现自己不得不在单个组件里做很多建立和清理的工作，最好的方式通常还是创建更多的模块化组件，在这个例子中，推荐一个可复用的<code>&lt;input-datapicker&gt;</code></li>
-</ul>
-
-                                            
-
-                                                
-                                                    <div class="page-reward">
-                                                        <a href="javascript:;" class="page-reward-btn tooltip-top">
-                                                            <div class="tooltip tooltip-east">
-                                                                <span class="tooltip-item">
-              赏
-            </span>
-                                                                <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                                                                
-                                                    </div>
-                                                    </span>
-                                                    </span>
-                                                    </span>
-                </div>
-                </a>
-    </div>
-    
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -273,116 +197,21 @@
 		</ul>
 	</div>
 
-                        
+          
 
-                            
-
-                                    
-                                        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
+        <div class="clearfix"></div>
+    </header>
   </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/28/%E7%BB%84%E4%BB%B6_%E5%A4%84%E7%90%86%E8%BE%B9%E7%95%8C%E6%83%85%E5%86%B5/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-                                            
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
 </article>
+  
+  
+    </div></section>
+  
 
     
-<nav id="article-nav">
-  
-    <a href="/2020/07/04/$nextTick%E7%90%86%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          $nextTick理解
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/06/24/js%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E5%9D%91/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js块级作用域的坑</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-        
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
-                
-                    
-
-                                
-
-                                            
-
-                                                        
-
-                                                                
-                                                                            
           </div>
         </div>
       </div>
@@ -403,8 +232,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
