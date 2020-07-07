@@ -6,25 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Vue中v-for使用key的作用 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言我在学习Vue的v-for的指令时存在的疑惑:  为什么v-for后还要加 key 用index作为key值有时缺不可以  这个问题我想了很久，查阅了许多博客，论坛，终于有了眉目。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Vue中v-for使用key的作用">
-<meta property="og:url" content="http://yoursite.com/2020/06/20/Vue%E4%B8%AD%20v-for%E4%BD%BF%E7%94%A8key%E7%9A%84%E4%BD%9C%E7%94%A8/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言我在学习Vue的v-for的指令时存在的疑惑:  为什么v-for后还要加 key 用index作为key值有时缺不可以  这个问题我想了很久，查阅了许多博客，论坛，终于有了眉目。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3973616-ff6a298524fd39dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3973616-281b0c8ae857f17f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/534/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3973616-ff6a298524fd39dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3973616-ef133a0c7dff8d82.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/478/format/webp">
-<meta property="article:published_time" content="2020-06-20T10:16:22.000Z">
-<meta property="article:modified_time" content="2020-06-24T11:46:19.057Z">
 <meta property="article:author" content="朱恩光Blog">
-<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3973616-ff6a298524fd39dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -166,20 +156,22 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Vue中 v-for使用key的作用" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
-    <h1 class="article-title" itemprop="name">
-      Vue中v-for使用key的作用
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/08/hello-world/">我的第一章博客</a>
     </h1>
   
 
                     
-                        <a href="/2020/06/20/Vue%E4%B8%AD%20v-for%E4%BD%BF%E7%94%A8key%E7%9A%84%E4%BD%9C%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-06-20T10:16:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
+                        <a href="/2020/06/08/hello-world/" class="archive-article-date">
+  	<time datetime="2020-06-08T10:34:58.525Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
 </a>
                             <!-- 需要添加的位置 -->
                             <!-- 开始添加字数统计-->
@@ -189,7 +181,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-    <span class="post-count">684字</span>
+    <span class="post-count">63字</span>
     </span>
     </span>
 
@@ -198,7 +190,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-    <span class="post-count">3分</span>
+    <span class="post-count">1分</span>
     </span>
     </span>
 </div>
@@ -209,142 +201,37 @@
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>我在学习Vue的v-for的指令时存在的疑惑:</p>
-<ul>
-<li>为什么v-for后还要加 key</li>
-<li>用index作为key值有时缺不可以</li>
-</ul>
-<p>这个问题我想了很久，查阅了许多博客，论坛，终于有了眉目。</p>
-<a id="more"></a>
-<h4 id="Dom-diff"><a href="#Dom-diff" class="headerlink" title="Dom diff"></a>Dom diff</h4><p>首先要深入了解key的作用，就应该了解Dom diff。简单来说，Dom diff是对于前端性能的优化的是一算法。在我们进行数据的更新时，Vue内部是通过Diff算法，它会根据key与tag值，对虚拟Dom更新，从而进行页面的更新渲染。</p>
-<h4 id="v-for使用key的作用"><a href="#v-for使用key的作用" class="headerlink" title="v-for使用key的作用"></a>v-for使用key的作用</h4><p> 使用v-for更新以渲染的元素时，默认采用就地复用策略（通过判断两个节点是否为同一节点），查看key值和tag是否相同。<br> 先举一个例子</p>
-<h6 id="没有key"><a href="#没有key" class="headerlink" title="没有key"></a>没有key</h6> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v</span> <span class="attr">-</span> <span class="attr">model</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"add"</span>&gt;</span> 添加</span><br><span class="line">                 <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">v</span> <span class="attr">-</span> <span class="attr">for</span>=<span class="string">"(item, i) in list"</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span> &#123; &#123; item.name &#125; &#125;</span><br><span class="line">         <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> var vm = new Vue(&#123;</span><br><span class="line">         el: '#app',</span><br><span class="line">         data: &#123;</span><br><span class="line">             name: '',</span><br><span class="line">             newId: 3,</span><br><span class="line">             list: [&#123;</span><br><span class="line">                 id: 1,</span><br><span class="line">                 name: '李斯'</span><br><span class="line">             &#125;, &#123;</span><br><span class="line">                 id: 2,</span><br><span class="line">                 name: '吕不韦'</span><br><span class="line">             &#125;, &#123;</span><br><span class="line">                 id: 3,</span><br><span class="line">                 name: '嬴政'</span><br><span class="line">             &#125;]</span><br><span class="line">         &#125;,</span><br><span class="line">         methods: &#123;</span><br><span class="line">             add() &#123;</span><br><span class="line">                 //注意这里是unshift</span><br><span class="line">                 this.list.unshift(&#123;</span><br><span class="line">                     id: ++this.newId,</span><br><span class="line">                     name: this.name</span><br><span class="line">                 &#125;)</span><br><span class="line">                 this.name = ''</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;);</span><br></pre></td></tr></table></figure>
-<p> 当选中吕不为时，添加楠楠后选中的确是李斯，并不是我们想要的结果，我们想要的是当添加楠楠后，一种选中的是吕不为<br> <img src="https://upload-images.jianshu.io/upload_images/3973616-ff6a298524fd39dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp" alt="的"><br><img src="https://upload-images.jianshu.io/upload_images/3973616-281b0c8ae857f17f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/534/format/webp" alt="12"><br>当没有设置key，它会对前后两个Dom树进行比对，如果发现tag与key相同(默认没有key为索引),就进行复用。</p>
-<h6 id="有key-key不为index"><a href="#有key-key不为index" class="headerlink" title="有key(key不为index)"></a>有key(key不为index)</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"add"</span>&gt;</span>添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item, i) in list"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span> &#123;&#123;item.name&#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 创建 Vue 实例，得到 ViewModel</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">      el: <span class="string">'#app'</span>,</span></span><br><span class="line">      data: &#123;</span><br><span class="line"><span class="actionscript">        name: <span class="string">''</span>,</span></span><br><span class="line">        newId: 3,</span><br><span class="line">        list: [</span><br><span class="line"><span class="actionscript">          &#123; id: <span class="number">1</span>, name: <span class="string">'李斯'</span> &#125;,</span></span><br><span class="line"><span class="actionscript">          &#123; id: <span class="number">2</span>, name: <span class="string">'吕不韦'</span> &#125;,</span></span><br><span class="line"><span class="actionscript">          &#123; id: <span class="number">3</span>, name: <span class="string">'嬴政'</span> &#125;</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">      methods: &#123;</span><br><span class="line">        add() &#123;</span><br><span class="line"><span class="actionscript">         <span class="comment">//注意这里是unshift</span></span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.list.unshift(&#123; id: ++<span class="keyword">this</span>.newId, name: <span class="keyword">this</span>.name &#125;)</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.name = <span class="string">''</span></span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">同样当选中吕不为时，添加楠楠后依旧选中的是吕不为。</span><br></pre></td></tr></table></figure>
-<p> <img src="https://upload-images.jianshu.io/upload_images/3973616-ff6a298524fd39dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp" alt="的"><br>  <img src="https:////upload-images.jianshu.io/upload_images/3973616-ef133a0c7dff8d82.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/478/format/webp" alt="的"><br>  可以简单的这样理解：加了key(一定要具有唯一性) id的checkbox跟内容进行了一个关联,可以理解key值所对应的input不会改变，这种做法增加或删除不会重新增加或修改整个Dom元素，而是增加或删除某一个，也是为了高效的更新虚拟DOM</p>
+                                        <h3 id="希望每天都会充实，提升技术为目标！！！"><a href="#希望每天都会充实，提升技术为目标！！！" class="headerlink" title="希望每天都会充实，提升技术为目标！！！"></a>希望每天都会充实，提升技术为目标！！！</h3><h3 id="将写博客一直坚持下去"><a href="#将写博客一直坚持下去" class="headerlink" title="将写博客一直坚持下去"></a>将写博客一直坚持下去</h3><p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1592066491200&di=c04487267fe0b220c61ba2d1a2542ea5&imgtype=0&src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F71%2F49117%2F87d3e442b5921791_1366x768.jpg" alt="es6"></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>功到自然成，成功之前难免有失败，然而只要能克服困难，坚持不懈地努力，那么，成功就在眼前。</p>
+</blockquote>
+</blockquote>
+</blockquote>
 
                                             
 
                                                 
-                                                    <div class="page-reward">
-                                                        <a href="javascript:;" class="page-reward-btn tooltip-top">
-                                                            <div class="tooltip tooltip-east">
-                                                                <span class="tooltip-item">
-              赏
-            </span>
-                                                                <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                                                                
-                                                    </div>
-                                                    </span>
-                                                    </span>
-                                                    </span>
-                </div>
-                </a>
-    </div>
-    
         </div>
         <div class="article-info article-info-index">
             
                     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
                         
 
                             
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/2020/06/08/hello-world/">
+                                        展开全文 >></a>
+                                </p>
+                                
 
                                     
-                                        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/20/Vue%E4%B8%AD%20v-for%E4%BD%BF%E7%94%A8key%E7%9A%84%E4%BD%9C%E7%94%A8/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-                                            
                                                 <div class="clearfix"></div>
         </div>
         </div>
 </article>
 
-    
-<nav id="article-nav">
-  
-    <a href="/2020/06/22/Vue%E4%B8%ADV-model%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89V-model/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          V-model的实现原理及如何定义V-model
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/06/17/Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue的生命周期</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-        
             <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
@@ -363,16 +250,14 @@
 
 
                 
-                    
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
-                                
 
-                                            
-
-                                                        
-
-                                                                
-                                                                            
           </div>
         </div>
       </div>
@@ -392,8 +277,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

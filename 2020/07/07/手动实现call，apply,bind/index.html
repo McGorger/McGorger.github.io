@@ -6,25 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Vue中v-for使用key的作用 | Hexo</title>
+  <title>手动实现call，apply,bind | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言我在学习Vue的v-for的指令时存在的疑惑:  为什么v-for后还要加 key 用index作为key值有时缺不可以  这个问题我想了很久，查阅了许多博客，论坛，终于有了眉目。">
+  <meta name="description" content="call apply bind是什么？call，apply，bind是js给函数内部提供的api，可以通过调用他们改变函数内部的指向。 如何使用1234function getName(age,home)&amp;#123;    console.log(this.name,age,home)&amp;#125;var obj &#x3D; &amp;#123; name:&#39;小朱&#39; &amp;#125;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue中v-for使用key的作用">
-<meta property="og:url" content="http://yoursite.com/2020/06/20/Vue%E4%B8%AD%20v-for%E4%BD%BF%E7%94%A8key%E7%9A%84%E4%BD%9C%E7%94%A8/index.html">
+<meta property="og:title" content="手动实现call，apply,bind">
+<meta property="og:url" content="http://yoursite.com/2020/07/07/%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0call%EF%BC%8Capply,bind/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言我在学习Vue的v-for的指令时存在的疑惑:  为什么v-for后还要加 key 用index作为key值有时缺不可以  这个问题我想了很久，查阅了许多博客，论坛，终于有了眉目。">
+<meta property="og:description" content="call apply bind是什么？call，apply，bind是js给函数内部提供的api，可以通过调用他们改变函数内部的指向。 如何使用1234function getName(age,home)&amp;#123;    console.log(this.name,age,home)&amp;#125;var obj &#x3D; &amp;#123; name:&#39;小朱&#39; &amp;#125;">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3973616-ff6a298524fd39dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3973616-281b0c8ae857f17f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/534/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3973616-ff6a298524fd39dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3973616-ef133a0c7dff8d82.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/478/format/webp">
-<meta property="article:published_time" content="2020-06-20T10:16:22.000Z">
-<meta property="article:modified_time" content="2020-06-24T11:46:19.057Z">
+<meta property="og:image" content="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=450395766,216432551&fm=15&gp=0.jpg">
+<meta property="article:published_time" content="2020-07-07T09:00:18.000Z">
+<meta property="article:modified_time" content="2020-07-07T10:57:40.490Z">
 <meta property="article:author" content="朱恩光Blog">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3973616-ff6a298524fd39dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp">
+<meta name="twitter:image" content="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=450395766,216432551&fm=15&gp=0.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -166,20 +163,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Vue中 v-for使用key的作用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-手动实现call，apply,bind" class="article article-type-post " itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
     <h1 class="article-title" itemprop="name">
-      Vue中v-for使用key的作用
+      手动实现call，apply,bind
     </h1>
   
 
                     
-                        <a href="/2020/06/20/Vue%E4%B8%AD%20v-for%E4%BD%BF%E7%94%A8key%E7%9A%84%E4%BD%9C%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-06-20T10:16:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
+                        <a href="/2020/07/07/%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0call%EF%BC%8Capply,bind/" class="archive-article-date">
+  	<time datetime="2020-07-07T09:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
 </a>
                             <!-- 需要添加的位置 -->
                             <!-- 开始添加字数统计-->
@@ -189,7 +186,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-    <span class="post-count">684字</span>
+    <span class="post-count">374字</span>
     </span>
     </span>
 
@@ -198,7 +195,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-    <span class="post-count">3分</span>
+    <span class="post-count">1分</span>
     </span>
     </span>
 </div>
@@ -209,20 +206,15 @@
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>我在学习Vue的v-for的指令时存在的疑惑:</p>
-<ul>
-<li>为什么v-for后还要加 key</li>
-<li>用index作为key值有时缺不可以</li>
-</ul>
-<p>这个问题我想了很久，查阅了许多博客，论坛，终于有了眉目。</p>
+                                        <h3 id="call-apply-bind是什么？"><a href="#call-apply-bind是什么？" class="headerlink" title="call apply bind是什么？"></a>call apply bind是什么？</h3><p>call，apply，bind是js给函数内部提供的api，可以通过调用他们改变函数内部的指向。</p>
+<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params">age,home</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,age,home)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">name</span>:<span class="string">'小朱'</span> &#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h4 id="Dom-diff"><a href="#Dom-diff" class="headerlink" title="Dom diff"></a>Dom diff</h4><p>首先要深入了解key的作用，就应该了解Dom diff。简单来说，Dom diff是对于前端性能的优化的是一算法。在我们进行数据的更新时，Vue内部是通过Diff算法，它会根据key与tag值，对虚拟Dom更新，从而进行页面的更新渲染。</p>
-<h4 id="v-for使用key的作用"><a href="#v-for使用key的作用" class="headerlink" title="v-for使用key的作用"></a>v-for使用key的作用</h4><p> 使用v-for更新以渲染的元素时，默认采用就地复用策略（通过判断两个节点是否为同一节点），查看key值和tag是否相同。<br> 先举一个例子</p>
-<h6 id="没有key"><a href="#没有key" class="headerlink" title="没有key"></a>没有key</h6> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v</span> <span class="attr">-</span> <span class="attr">model</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"add"</span>&gt;</span> 添加</span><br><span class="line">                 <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">v</span> <span class="attr">-</span> <span class="attr">for</span>=<span class="string">"(item, i) in list"</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span> &#123; &#123; item.name &#125; &#125;</span><br><span class="line">         <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> var vm = new Vue(&#123;</span><br><span class="line">         el: '#app',</span><br><span class="line">         data: &#123;</span><br><span class="line">             name: '',</span><br><span class="line">             newId: 3,</span><br><span class="line">             list: [&#123;</span><br><span class="line">                 id: 1,</span><br><span class="line">                 name: '李斯'</span><br><span class="line">             &#125;, &#123;</span><br><span class="line">                 id: 2,</span><br><span class="line">                 name: '吕不韦'</span><br><span class="line">             &#125;, &#123;</span><br><span class="line">                 id: 3,</span><br><span class="line">                 name: '嬴政'</span><br><span class="line">             &#125;]</span><br><span class="line">         &#125;,</span><br><span class="line">         methods: &#123;</span><br><span class="line">             add() &#123;</span><br><span class="line">                 //注意这里是unshift</span><br><span class="line">                 this.list.unshift(&#123;</span><br><span class="line">                     id: ++this.newId,</span><br><span class="line">                     name: this.name</span><br><span class="line">                 &#125;)</span><br><span class="line">                 this.name = ''</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;);</span><br></pre></td></tr></table></figure>
-<p> 当选中吕不为时，添加楠楠后选中的确是李斯，并不是我们想要的结果，我们想要的是当添加楠楠后，一种选中的是吕不为<br> <img src="https://upload-images.jianshu.io/upload_images/3973616-ff6a298524fd39dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp" alt="的"><br><img src="https://upload-images.jianshu.io/upload_images/3973616-281b0c8ae857f17f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/534/format/webp" alt="12"><br>当没有设置key，它会对前后两个Dom树进行比对，如果发现tag与key相同(默认没有key为索引),就进行复用。</p>
-<h6 id="有key-key不为index"><a href="#有key-key不为index" class="headerlink" title="有key(key不为index)"></a>有key(key不为index)</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"add"</span>&gt;</span>添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item, i) in list"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span> &#123;&#123;item.name&#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 创建 Vue 实例，得到 ViewModel</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">      el: <span class="string">'#app'</span>,</span></span><br><span class="line">      data: &#123;</span><br><span class="line"><span class="actionscript">        name: <span class="string">''</span>,</span></span><br><span class="line">        newId: 3,</span><br><span class="line">        list: [</span><br><span class="line"><span class="actionscript">          &#123; id: <span class="number">1</span>, name: <span class="string">'李斯'</span> &#125;,</span></span><br><span class="line"><span class="actionscript">          &#123; id: <span class="number">2</span>, name: <span class="string">'吕不韦'</span> &#125;,</span></span><br><span class="line"><span class="actionscript">          &#123; id: <span class="number">3</span>, name: <span class="string">'嬴政'</span> &#125;</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">      methods: &#123;</span><br><span class="line">        add() &#123;</span><br><span class="line"><span class="actionscript">         <span class="comment">//注意这里是unshift</span></span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.list.unshift(&#123; id: ++<span class="keyword">this</span>.newId, name: <span class="keyword">this</span>.name &#125;)</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.name = <span class="string">''</span></span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">同样当选中吕不为时，添加楠楠后依旧选中的是吕不为。</span><br></pre></td></tr></table></figure>
-<p> <img src="https://upload-images.jianshu.io/upload_images/3973616-ff6a298524fd39dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp" alt="的"><br>  <img src="https:////upload-images.jianshu.io/upload_images/3973616-ef133a0c7dff8d82.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/478/format/webp" alt="的"><br>  可以简单的这样理解：加了key(一定要具有唯一性) id的checkbox跟内容进行了一个关联,可以理解key值所对应的input不会改变，这种做法增加或删除不会重新增加或修改整个Dom元素，而是增加或删除某一个，也是为了高效的更新虚拟DOM</p>
+<p><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=450395766,216432551&fm=15&gp=0.jpg" alt="$nextTick"><br>我们想实现的是调用<code>getName</code> 打印出obj的name属性，我们可以用call，apply，bind分别来实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// call</span></span><br><span class="line">  getName.call(obj,<span class="number">10</span>,<span class="string">'北京'</span>) </span><br><span class="line"> <span class="comment">// apply</span></span><br><span class="line">  getName.apply(obj,[<span class="number">10</span>,<span class="string">'北京'</span>])</span><br><span class="line">  <span class="comment">// bind</span></span><br><span class="line"> <span class="keyword">const</span> newFun =  <span class="keyword">get</span>.bind(obj,[10,'北京']);</span><br><span class="line">   newFun();</span><br></pre></td></tr></table></figure>
+<p>apply和call只是传参不一样，但是两个都是会在调用的时候同时执行调用的函数，但是bind则会绑定一个this的函数（改变this指向）。</p>
+<h4 id="实现call-apply-bind"><a href="#实现call-apply-bind" class="headerlink" title="实现call, apply bind"></a>实现call, apply bind</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">prototype</span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getDefaultContext</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 如果传入的是 null undefined context等于window</span></span><br><span class="line">        context = context || <span class="built_in">window</span>;</span><br><span class="line">        <span class="comment">// 如果基本值 'a' true 1</span></span><br><span class="line">        <span class="keyword">let</span> type = <span class="keyword">typeof</span> context;</span><br><span class="line">        <span class="keyword">if</span> ([<span class="string">'number'</span>, <span class="string">'string'</span>, <span class="string">'boolean'</span>].includes(type)) &#123;</span><br><span class="line">            context = <span class="keyword">new</span> context.constructor(context);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> context;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">call2</span>(<span class="params">context, ...args</span>) </span>&#123;</span><br><span class="line">        context = getDefaultContext(context);</span><br><span class="line">        <span class="keyword">let</span> symbol = <span class="built_in">Symbol</span>(<span class="string">'fn'</span>);</span><br><span class="line">        context[symbol] = <span class="keyword">this</span>;</span><br><span class="line">        context[symbol](...args);</span><br><span class="line">        <span class="keyword">delete</span> context[symbol]; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">apply2</span>(<span class="params">context, args</span>) </span>&#123;</span><br><span class="line">        context = getDefaultContext(context);</span><br><span class="line">        <span class="keyword">let</span> symbol = <span class="built_in">Symbol</span>(<span class="string">'fn'</span>);</span><br><span class="line">        context[symbol] = <span class="keyword">this</span>;</span><br><span class="line">        context[symbol](...args);</span><br><span class="line">        <span class="keyword">delete</span> context[symbol];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bind2</span>(<span class="params">context, ...outerArgs</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// this = getName</span></span><br><span class="line">        <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> <span class="keyword">this</span>.call(context, ...outerArgs, ...args);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    prototype.call2 = call2;</span><br><span class="line">    prototype.apply2 = apply2;</span><br><span class="line">    prototype.binds = bind2;</span><br><span class="line">&#125;)(<span class="built_in">Function</span>.prototype);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params">age, home</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name, age, home)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">name</span>: <span class="string">'小朱'</span> &#125;</span><br><span class="line">getName.call2(obj, <span class="number">10</span>, <span class="string">'北京'</span>)</span><br><span class="line">getName.apply2(obj, [<span class="number">10</span>, <span class="string">'北京'</span>])</span><br><span class="line"><span class="keyword">let</span> bindGetName = getName.bind(obj, <span class="number">10</span>);</span><br><span class="line">bindGetName(<span class="string">'北京'</span>);</span><br></pre></td></tr></table></figure>
+<p>这样 简易apply ，call，bind就这样实现了。</p>
+<h5 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h5><p> 学习不会停止，希望以后多学习，丰富自己，多练习，摆脱各种学习上的困扰加油！！！</p>
 
                                             
 
@@ -257,7 +249,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -313,7 +305,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/20/Vue%E4%B8%AD%20v-for%E4%BD%BF%E7%94%A8key%E7%9A%84%E4%BD%9C%E7%94%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/07/%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0call%EF%BC%8Capply,bind/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -327,18 +319,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/06/22/Vue%E4%B8%ADV-model%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89V-model/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          V-model的实现原理及如何定义V-model
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/17/Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue的生命周期</div>
+    <a href="/2020/07/04/$nextTick%E7%90%86%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">$nextTick理解</div>
       <i class="icon-circle-right"></i>
     </a>
   
