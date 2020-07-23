@@ -158,6 +158,107 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-封装Vue组件将任意后缀文件目录统一全部引入到当前文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/%E5%B0%81%E8%A3%85Vue%E7%BB%84%E4%BB%B6%E5%B0%86%E4%BB%BB%E6%84%8F%E5%90%8E%E7%BC%80%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%BB%9F%E4%B8%80%E5%85%A8%E9%83%A8%E5%BC%95%E5%85%A5%E5%88%B0%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6/">封装Vue组件将任意后缀文件目录统一全部引入到当前文件</a>
+    </h1>
+  
+
+                    
+                        <a href="/2020/07/23/%E5%B0%81%E8%A3%85Vue%E7%BB%84%E4%BB%B6%E5%B0%86%E4%BB%BB%E6%84%8F%E5%90%8E%E7%BC%80%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%BB%9F%E4%B8%80%E5%85%A8%E9%83%A8%E5%BC%95%E5%85%A5%E5%88%B0%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6/" class="archive-article-date">
+  	<time datetime="2020-07-23T15:37:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+</a>
+                            <!-- 需要添加的位置 -->
+                            <!-- 开始添加字数统计-->
+                            
+                                <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+    <span class="post-count">156字</span>
+    </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+    <span class="post-count">1分</span>
+    </span>
+    </span>
+</div>
+                                    
+                                        <!-- 添加完成 -->
+                                        
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+                        <p>引发这种问题是由于我这做关于一个记账的Vue项目，当时目的是想封装一个svg的组件，需要引入svg图片，我当时是这样做的:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>  money <span class="keyword">from</span> <span class="string">'@/assets/icons/money.svg'</span></span><br><span class="line"><span class="keyword">import</span>  labels <span class="keyword">from</span> <span class="string">'@/assets/icons/labels.svg'</span></span><br><span class="line"><span class="keyword">import</span>  statistics <span class="keyword">from</span> <span class="string">'@/assets/icons/statistics.svg'</span></span><br></pre></td></tr></table></figure>
+                            
+                                <a class="article-more-a" href="/2020/07/23/%E5%B0%81%E8%A3%85Vue%E7%BB%84%E4%BB%B6%E5%B0%86%E4%BB%BB%E6%84%8F%E5%90%8E%E7%BC%80%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%BB%9F%E4%B8%80%E5%85%A8%E9%83%A8%E5%BC%95%E5%85%A5%E5%88%B0%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6/#more">
+                                    more >></a>
+                                
+                                    
+
+                                                
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Vue全家桶</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                        
+
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/2020/07/23/%E5%B0%81%E8%A3%85Vue%E7%BB%84%E4%BB%B6%E5%B0%86%E4%BB%BB%E6%84%8F%E5%90%8E%E7%BC%80%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%BB%9F%E4%B8%80%E5%85%A8%E9%83%A8%E5%BC%95%E5%85%A5%E5%88%B0%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
+</article>
+
+            <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+                
+  
     <article id="post-js中的防抖与节流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1066,106 +1167,6 @@
 
                 
   
-    <article id="post-ES6 Promise用法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/13/ES6%20Promise%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/">ES6 Promise用法总结</a>
-    </h1>
-  
-
-                    
-                        <a href="/2020/06/13/ES6%20Promise%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-06-13T10:06:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-13</time>
-</a>
-                            <!-- 需要添加的位置 -->
-                            <!-- 开始添加字数统计-->
-                            
-                                <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-    <span class="post-count">1.2k字</span>
-    </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-    <span class="post-count">5分</span>
-    </span>
-    </span>
-</div>
-                                    
-                                        <!-- 添加完成 -->
-                                        
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                        <p><strong>Promise的出现是为了解决函数回调地狱的问题，但并没有消除回调，只是让回调变得可控</strong><br> <img src="img/%E5%9B%BE%E4%BE%8B.png" alt="promise"><br>
-                            
-                                <a class="article-more-a" href="/2020/06/13/ES6%20Promise%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/#more">
-                                    more >></a>
-                                
-                                    
-
-                                                
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                        
-
-                            
-                                <p class="article-more-link">
-                                    <a class="article-more-a" href="/2020/06/13/ES6%20Promise%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/">
-                                        展开全文 >></a>
-                                </p>
-                                
-
-                                    
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
-</article>
-
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-                
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1268,6 +1269,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vue全家桶</a>
               </li>
             
             <div class="clearfix"></div>
